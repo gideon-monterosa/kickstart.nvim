@@ -11,13 +11,14 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '<Leader>e', ':Neotree toggle<CR>', desc = 'Toggle NeoTree', silent = true },
+    { '<Leader>e', ':Neotree focus<CR>', desc = 'Focus NeoTree', silent = true },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['<Leader>e'] = 'close_window',
+          ['<space>'] = 'none',
         },
       },
     },
