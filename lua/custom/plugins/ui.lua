@@ -3,7 +3,6 @@ return {
     'nvim-lualine/lualine.nvim',
     event = 'VeryLazy',
     opts = {
-      -- table.insert(opts.sections.lualine_x, "😄")
       options = {
         icons_enabled = true,
         theme = 'auto',
@@ -13,10 +12,10 @@ return {
         always_divide_middle = true,
       },
       sections = {
-        lualine_a = { 'mode' },
+        lualine_a = { { 'mode', icon = '' } },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_x = { 'encoding', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
@@ -32,6 +31,21 @@ return {
       extensions = { 'neo-tree' },
     },
   },
+
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {
+      presets = {
+        command_palette = true,
+      },
+    },
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    },
+  },
+
   {
     'akinsho/bufferline.nvim',
     event = 'VeryLazy',
