@@ -1,5 +1,4 @@
 return {
-
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -7,6 +6,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        javascript = { 'eslint_d' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
@@ -51,5 +51,11 @@ return {
         end,
       })
     end,
+  },
+  {
+    'MunifTanjim/eslint.nvim',
+    opts = {
+      bin = 'eslint_d',
+    },
   },
 }

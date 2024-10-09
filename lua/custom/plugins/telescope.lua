@@ -46,6 +46,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --   },
       -- },
       -- pickers = {}
+      defaults = {
+        -- Add file ignore patterns here
+        file_ignore_patterns = {
+          'package%-lock%.json', -- Ignore package-lock.json
+          'node_modules', -- Ignore node_modules
+        },
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
