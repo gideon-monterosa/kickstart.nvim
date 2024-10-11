@@ -52,10 +52,4 @@ return {
       })
     end,
   },
-  {
-    'MunifTanjim/eslint.nvim',
-    opts = {
-      bin = 'eslint_d',
-    },
-  },
 }
