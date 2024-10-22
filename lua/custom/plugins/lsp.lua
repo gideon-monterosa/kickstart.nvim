@@ -80,10 +80,13 @@ return {
 
         clangd = {
           cmd = { 'clangd', '--background-index', '--clang-tidy', '--completion-style=detailed', '--header-insertion=iwyu' },
+          root_dir = function(fname)
+            return require('lspconfig.util').root_pattern 'CMakeLists.txt'(fname) or vim.fn.getcwd()
+          end,
           capabilities = capabilities,
           settings = {
             clangd = {
-              fallbackFlags = { '-std=c++17' },
+              fallbackFlags = { '-std=c++20' },
             },
           },
         },
