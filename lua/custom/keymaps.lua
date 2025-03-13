@@ -13,3 +13,5 @@ map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 map('n', 'H', '<cmd>bprev<CR>')
 map('n', 'L', '<cmd>bnext<CR>')
+
+map('n', '-', '<CMD>Oil --float<CR>', { desc = 'Open parent directory' })

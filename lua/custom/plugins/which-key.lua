@@ -1,7 +1,7 @@
 return {
-  { -- Useful plugin to show you pending keybinds.
+  {
     'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+    event = 'VimEnter',
     opts = {
       icons = {
         -- set icon mappings to true if you have a Nerd Font
@@ -38,13 +38,6 @@ return {
           F11 = '<F11>',
           F12 = '<F12>',
         },
-      },
-      spec = {
-        { '<leader>c', group = 'Code', mode = { 'n', 'x' } },
-        { '<leader>r', group = 'Refactor' },
-        { '<leader>f', group = 'Find' },
-        { '<leader>t', group = 'Toggle' },
-        { '<leader>b', group = 'Buffers' },
       },
     },
     config = function()

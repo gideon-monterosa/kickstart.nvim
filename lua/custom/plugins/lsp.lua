@@ -90,6 +90,19 @@ return {
             },
           },
         },
+
+        ts_ls = {
+          root_dir = require('lspconfig').util.root_pattern 'package.json',
+          single_file_support = false,
+        },
+
+        denols = {
+          root_dir = require('lspconfig').util.root_pattern('deno.json', 'deno.jsonc'),
+          init_options = {
+            lint = true,
+            unstable = true,
+          },
+        },
       }
 
       require('mason').setup()
@@ -100,6 +113,7 @@ return {
         'prettierd',
         'lua-language-server',
         'clangd',
+        'denols',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
