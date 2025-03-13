@@ -3,6 +3,7 @@ return {
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
     keys = {
+      { '<leader>t', '', desc = 'Toggle' },
       { '<leader>tl', '<cmd>ToggleLint<cr>', desc = 'Toggle Inline Linting' },
     },
     config = function()
