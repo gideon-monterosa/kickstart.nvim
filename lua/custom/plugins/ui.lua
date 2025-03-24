@@ -1,6 +1,9 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
+    dependencies = {
+      { 'yavorski/lualine-macro-recording.nvim' },
+    },
     event = 'VeryLazy',
     opts = {
       options = {
@@ -15,7 +18,7 @@ return {
       sections = {
         lualine_a = { { 'mode', icon = '' } },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
+        lualine_c = { 'filename', 'macro_recording' },
         lualine_x = { 'encoding', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
