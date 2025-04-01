@@ -21,10 +21,6 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     opts = {
-      keys = {
-        { '<leader>g', '', desc = 'Git' },
-        { '<leader>t', '', desc = 'Toggle' },
-      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
@@ -34,8 +30,9 @@ return {
           vim.keymap.set(mode, l, r, opts)
         end
 
+        map('n', '<leader>g', '', { desc = 'Git' })
         map('n', '<leader>gn', function()
-          if vim.wo.diff then
+          if vim.asf.diff then
             vim.cmd.normal { ']c', bang = true }
           else
             gitsigns.nav_hunk 'next'
@@ -54,7 +51,9 @@ return {
         map('n', '<leader>gd', gitsigns.preview_hunk_inline, { desc = 'git preview hunk' })
         map('n', '<leader>gb', gitsigns.blame_line, { desc = 'git blame line' })
 
+        map('n', '<leader>t', '', { desc = 'Toggle' })
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = 'Toggle git show blame line' })
+        map('n', '<leader>td', gitsigns.toggle_linehl, { desc = 'Toggle git show diff' })
       end,
     },
   },

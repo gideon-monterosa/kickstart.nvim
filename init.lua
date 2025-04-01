@@ -74,6 +74,7 @@ require('lazy').setup({
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         cpp = { 'clang_format' },
         markdown = { 'prettierd', 'prettier', stop_after_first = true },
+        yaml = { 'prettierd' },
       },
       formatters = {
         clang_format = {
